@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beneficiary Profile</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>CHUDD Economic Profiling System</h2>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-address-card"></i> Add Profile</a></li>
+            <li><a href="database.html"><i class="fas fa-address-book"></i> Database</a></li>
+            <li><a href="reports.html"><i class="fas fa-project-diagram"></i> Reports</a></li>
+        </ul> 
+    </div>
+    <section class="main_content">
+        <h1 class="header">Beneficiary Profile</h1>  
+        <div class="info">
+          <main>
+            <form action="database.html" method="get">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="name-section">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                        <label for="middleName">Middle Name:</label>
+                        <input type="text" id="middleName" name="middleName"placeholder="Middle Name" required>
+                    </div>
+                    <div class="address-section">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" placeholder="Lot No./Block No./Resettlement Name/Barangay"required>
+                    </div>
+                    <div class="demographic-section">
+                        <label for="sex">Sex:</label>
+                        <input type="radio" id="male" name="sex" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="sex" value="female">
+                        <label for="female">Female</label>
+                        <br>
+                        <label for="civilStatus">Civil Status:</label>
+                        <select name="civilStatus" id="civilStatus">
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="separated">Separated</option>
+                            <option value="soloParent">Solo Parent</option>
+                            <option value="widow">Widow</option>
+                            <option value="commonLaw">Common Law</option>
+                        </select>
+                        <br>
+                        <label for="employmentStatus">Employment Status:</label>
+                        <input type="radio" id="employed" name="employmentStatus" value="employed">
+                        <label for="employed">Employed</label>
+                        <input type="radio" id="unemployed" name="employmentStatus" value="unemployed">
+                        <label for="unemployed">Unemployed</label>
+                    </div>
+                    <div class="personal-info-section">
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday" required>
+                        <label for="birthplace">Birthplace:</label>
+                        <input type="text" id="birthplace" name="birthplace" placeholder="City/Municipality/Province" required>
+                    </div>
+                </fieldset>
+
+
+                  <legend>Economic Sufficiency</legend>
+                  <div class="skills-section">
+                      <h3>A. Employable Skills</h3>
+                      <p>Occupational skills of family members aged 18 years or over</p>
+                      <label for="skill1">A.1.</label>
+                      <input type="text" id="skill1" name="skill1">
+                      <br>
+                      <label for="skill2">A.2.</label>
+                      <input type="text" id="skill2" name="skill2">
+                      <br>
+                      <label for="skill3">A.3.</label>
+                      <input type="text" id="skill3" name="skill3">
+                      <br>
+                      <label for="skill4">A.4.</label>
+                      <input type="text" id="skill4" name="skill4">
+                      <br>
+                      <label for="skill5">A.5.</label>
+                      <input type="text" id="skill5" name="skill5">
+                  </div>
+
+                  <div class="employment-section">
+                      <h3>B. Employment</h3>
+                      <p>Working status of family members ages 18 years or over</p>
+                      <div class="family-member-names">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Names of Family Members </th>
+                              <th> Regular </th>
+                              <th> Contractual (More than 6 months) </th>
+                              <th> Contractual (Less than 6 months) </th>
+                              <th> Estimated Contribution to the Family Monthly Income </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><label for="name1">B.1. </label><input type="text" name="familyMember1Name"></td>
+                              <td><input type="radio" name="familyMember1Status" value="regular"></td>
+                              <td><input type="radio" name="familyMember1Status" value="contractualMoreThan6"></td>
+                              <td><input type="radio" name="familyMember1Status" value="contractualLessThan6"></td>
+                              <td><input type="number" name="familyMember1Income"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="name1">B.2. </label><input type="text" name="familyMember2Name"></td>
+                              <td><input type="radio" name="familyMember2Status" value="regular"></td>
+                              <td><input type="radio" name="familyMember2Status" value="contractualMoreThan6"></td>
+                              <td><input type="radio" name="familyMember2Status" value="contractualLessThan6"></td>
+                              <td><input type="number" name="familyMember2Income"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="name1">B.3. </label><input type="text" name="familyMember3Name"></td>
+                              <td><input type="radio" name="familyMember3Status" value="regular"></td>
+                              <td><input type="radio" name="familyMember3Status" value="contractualMoreThan6"></td>
+                              <td><input type="radio" name="familyMember3Status" value="contractualLessThan6"></td>
+                              <td><input type="number" name="familyMember3Income"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="name1">B.4. </label><input type="text" name="familyMember4Name"></td>
+                              <td><input type="radio" name="familyMember4Status" value="regular"></td>
+                              <td><input type="radio" name="familyMember4Status" value="contractualMoreThan6"></td>
+                              <td><input type="radio" name="familyMember4Status" value="contractualLessThan6"></td>
+                              <td><input type="number" name="familyMember4Income"></td>
+                            </tr>
+                            <tr>
+                              <td><label for="name1">B.5. </label><input type="text" name="familyMember5Name"></td>
+                              <td><input type="radio" name="familyMember5Status" value="regular"></td>
+                              <td><input type="radio" name="familyMember5Status" value="contractualMoreThan6"></td>
+                              <td><input type="radio" name="familyMember5Status" value="contractualLessThan6"></td>
+                              <td><input type="number" name="familyMember5Income"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <h3>C. Income</h3>
+                      <label for="familyMonthlyIncome">Family monthly per capita income in the past 6 months:</label>
+                      <input type="number" id="familyMonthlyIncome" name="familyMonthlyIncome">
+                      <br>
+                      <label for="numFamilyMembers18">No. of Family Members 18 years old & Above:</label>
+                      <input type="number" id="numFamilyMembers18" name="numFamilyMembers18">
+                      <br>
+                      <label for="numFamilyMembersBelow18">No. of Family Members Below 18 years old:</label>
+                      <input type="number" id="numFamilyMembersBelow18" name="numFamilyMembersBelow18">
+                      <h3>D. Business Activities Involved</h3>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Name of Activity</th>
+                            <th>Estimated Monthly Net Income</th>
+                            <th>Period of Existence in Years</th>
+                            <th>Location of Business</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" name="businessActivity1Name"></td>
+                            <td><input type="number" name="businessActivity1Income"></td>
+                            <td><input type="number" name="businessActivity1Years"></td>
+                            <td><input type="text" name="businessActivity1Location"></td>
+                          </tr>
+                          <tr>
+                            <td><input type="text" name="businessActivity2Name"></td>
+                            <td><input type="number" name="businessActivity2Income"></td>
+                            <td><input type="number" name="businessActivity2Years"></td>
+                            <td><input type="text" name="businessActivity2Location"></td>
+                          </tr>
+                          <tr>
+                            <td><input type="text" name="businessActivity3Name"></td>
+                            <td><input type="number" name="businessActivity3Income"></td>
+                            <td><input type="number" name="businessActivity3Years"></td>
+                            <td><input type="text" name="businessActivity3Location"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+
+                  <h3>E. Educational Attainment</h3>
+                  <label for="education">Highest Grade Completed:</label>
+                  <select name="education" id="education">
+                      <option value="noGradeCompleted">No Grade Completed</option>
+                      <option value="preschool">Preschool(Nursery/Kinder/Prep)</option>
+                      <option value="elementaryUndergrad">Elementary Undergraduate</option>
+                      <option value="elementaryGraduate">Elementary Graduate</option>
+                      <option value="highSchoolUndergrad">High School Undergraduate</option>
+                      <option value="highSchoolGraduate">High School Undergraduate</option>
+                      <option value="postSecondaryUndergrad">Post Secondary Undergraduate</option>
+                      <option value="postSecondaryGraduate">Post Secondary Graduate</option>
+                      <option value="juniorHighGraduate">Junior High Graduate</option>
+                      <option value="seniorHighGraduate">Senior High Graduate</option>
+                      <option value="collegeUndergrad"> College Undergraduate</option>
+                      <option value="collegeGraduate"> College Graduate or Higher</option>
+                  </select>
+                  <label for="skillsAcDev">Skills Acquired and Developed:</label>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th rowspan="3">List of Skills Nga Ikaw Kahibalo</th>
+                            <th rowspan="1" colspan="4">Check the boxes that is applicable to you</th>
+                            <th rowspan="3">No. of Years of Experience</th>
+                            <th rowspan="3">Remarks (Labor fee per day if working, how many days/months if contractual)</th>
+                          </tr>
+                          <tr>
+                            <th rowspan="2">Vocational Graduate</th>
+                            <th rowspan="2">Vocational Undergrad</th>
+                            <th colspan="2">NC PASSER</th>
+                          </tr>
+                          <tr>
+                            <th>I</th>
+                            <th>II</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" name="personalSkill1"></td>
+                            <td><input type="radio" name="skillType1" value="vocGraduate"></td>
+                            <td><input type="radio" name="skillType1" value="vocUnderGraduate"></td>
+                            <td><input type="radio" name="skillType1" value="ncPasserI"></td>
+                            <td><input type="radio" name="skillType1" value="ncPasserII"></td>
+                            <td><input type="number" name="yearsExperience1"></td>
+                            <td><input type="text" name="remarks1"></td>
+
+                          </tr>
+                          <tr>
+                            <td><input type="text" name="personalSkill1"></td>
+                            <td><input type="radio" name="skillType1" value="vocGraduate"></td>
+                            <td><input type="radio" name="skillType1" value="vocUnderGraduate"></td>
+                            <td><input type="radio" name="skillType1" value="ncPasserI"></td>
+                            <td><input type="radio" name="skillType1" value="ncPasserII"></td>
+                            <td><input type="number" name="yearsExperience1"></td>
+                            <td><input type="text" name="remarks1"></td>
+                          </tr>
+                          <tr>
+                            <td><input type="text" name="personalSkill2"></td>
+                            <td><input type="radio" name="skillType2" value="vocGraduate"></td>
+                            <td><input type="radio" name="skillType2" value="vocUnderGraduate"></td>
+                            <td><input type="radio" name="skillType2" value="ncPasserI"></td>
+                            <td><input type="radio" name="skillType2" value="ncPasserII"></td>
+                            <td><input type="number" name="yearsExperience2"></td>
+                            <td><input type="text" name="remarks2"></td>
+                          </tr>
+                          <tr>
+                            <td><input type="text" name="personalSkill3"></td>
+                            <td><input type="radio" name="skillType3" value="vocGraduate"></td>
+                            <td><input type="radio" name="skillType3" value="vocUnderGraduate"></td>
+                            <td><input type="radio" name="skillType3" value="ncPasserI"></td>
+                            <td><input type="radio" name="skillType3" value="ncPasserII"></td>
+                            <td><input type="number" name="yearsExperience3"></td>
+                            <td><input type="text" name="remarks3"></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                      <h3>Employment Status</h3>
+                      <label>Are you presently EMPLOYED or CONNECTED to an agency or company?</label>
+                      <input type="radio" id="yes" name="employed" value="yes">
+                      <label for="yes">Yes</label>
+                      <input type="radio" id="no" name="employed" value="no">
+                      <label for="no">No</label>
+                      <br>
+                      <div id="yes">
+                        <label>If Yes, please specify your employment type:</label>
+                        <input type="radio" id="regular" name="employmentType" value="regular">
+                        <label for="regular">Regular</label>
+                        <input type="radio" id="contractual" name="employmentType" value="contractual">
+                        <label for="contractual">Contractual</label>
+                        <input type="radio" id="others" name="employmentType" value="others">
+                        <label for="others">Others</label>
+                      </div>
+                      <br>
+                      <p>Type of Disability (for Persons with Disability only)</p>
+                      <input type="checkbox" id="mental" name="disability[]" value="mental">
+                      <label for="mental">Mental/ Intellectual</label><br>
+                      <input type="checkbox" id="visual" name="disability[]" value="visual">
+                      <label for="visual">Visual Disability</label><br>
+                      <input type="checkbox" id="orthopedic" name="disability[]" value="orthopedic">
+                      <label for="orthopedic">Orthopedic (Musculoskeletal) Disability</label><br>
+                      <input type="checkbox" id="hearing" name="disability[]" value="hearing">
+                      <label for="hearing">Hearing Disability</label><br>
+                      <input type="checkbox" id="speech" name="disability[]" value="speech">
+                      <label for="speech">Speech Impairment</label><br>
+                      <input type="checkbox" id="psychological" name="disability[]" value="psychological">
+                      <label for="psychological">Psychological Disability</label><br>
+                      <input type="checkbox" id="chronic" name="disability[]" value="chronic">
+                      <label for="chronic">Disability Due to Chronic Illness</label><br>
+                      <input type="checkbox" id="learning" name="disability[]" value="learning">
+                      <label for="learning">Learning Disability</label><br>
+                      <br>
+                      <div id="disabilityType">
+                        <label>Causes of Disability (for Persons with Disability only):</label>
+                        <br>
+                        <input type="radio" id="congential" name="employmentType" value="congential">
+                        <label for="congential">Congential/Inborn</label>
+                        <input type="radio" id="illness" name="employmentType" value="illness">
+                        <label for="illness">Illness</label>
+                        <input type="radio" id="injury" name="employmentType" value="injury">
+                        <label for="injury">Injury</label>
+                      </div>
+                      <p>COURSE/TRAINING PROGRAM</p>
+                      <label>* 1st choice</label>
+                      <select id="course1">
+                        <option value="">None Selected</option>
+                        <option value="course1">Carpentry NC II</option>
+                        <option value="course2">Construction Painting</option>
+                        <option value="course3">Electrical Installation and Maintenance NC II</option>
+                        <option value="course4">Heavy Equipment Operator (Excavator)</option>
+                        <option value="course5">Heavy Equipment Operator (Forklift)</option>
+                        <option value="course6">Housekeeping NC II</option>
+                        <option value="course7">Plumbing NC I</option>
+                        <option value="course8">Plumbing NC II</option>
+                        <option value="course9">Shielded Metal Arc Welding NC I</option>
+                        <option value="course10">Heavy Equipment Servicing Tvet with Monark Foundation In.</option>
+                        <option value="course11">Heavy Equipment Servicing Senior High School with Monark Fdn. Inc</option>
+                        <option value="course12">General Sewing (City Improvement Division)</option>
+                        <option value="course13">Cookery (City Improvement Division)</option>
+                        <option value="course14">Bread & Pastry (City Improvement Division)</option>
+                        <option value="course15">Cosmetology(City Improvement Division)</option>
+                      </select><br>
+                      <label>* 2nd choice</label>
+                      <select id="course2">
+                        <option value="">None Selected</option>
+                        <option value="course1">Carpentry NC II</option>
+                        <option value="course2">Construction Painting</option>
+                        <option value="course3">Electrical Installation and Maintenance NC II</option>
+                        <option value="course4">Heavy Equipment Operator (Excavator)</option>
+                        <option value="course5">Heavy Equipment Operator (Forklift)</option>
+                        <option value="course6">Housekeeping NC II</option>
+                        <option value="course7">Plumbing NC I</option>
+                        <option value="course8">Plumbing NC II</option>
+                        <option value="course9">Shielded Metal Arc Welding NC I</option>
+                        <option value="course10">Heavy Equipment Servicing Tvet with Monark Foundation In.</option>
+                        <option value="course11">Heavy Equipment Servicing Senior High School with Monark Fdn. Inc</option>
+                        <option value="course12">General Sewing (City Improvement Division)</option>
+                        <option value="course13">Cookery (City Improvement Division)</option>
+                        <option value="course14">Bread & Pastry (City Improvement Division)</option>
+                        <option value="course15">Cosmetology(City Improvement Division)</option>
+                      </select><br>
+                      <label>* 3rd choice</label>
+                      <select id="course1">
+                        <option value="">None Selected</option>
+                        <option value="course1">Carpentry NC II</option>
+                        <option value="course2">Construction Painting</option>
+                        <option value="course3">Electrical Installation and Maintenance NC II</option>
+                        <option value="course4">Heavy Equipment Operator (Excavator)</option>
+                        <option value="course5">Heavy Equipment Operator (Forklift)</option>
+                        <option value="course6">Housekeeping NC II</option>
+                        <option value="course7">Plumbing NC I</option>
+                        <option value="course8">Plumbing NC II</option>
+                        <option value="course9">Shielded Metal Arc Welding NC I</option>
+                        <option value="course10">Heavy Equipment Servicing Tvet with Monark Foundation In.</option>
+                        <option value="course11">Heavy Equipment Servicing Senior High School with Monark Fdn. Inc</option>
+                        <option value="course12">General Sewing (City Improvement Division)</option>
+                        <option value="course13">Cookery (City Improvement Division)</option>
+                        <option value="course14">Bread & Pastry (City Improvement Division)</option>
+                        <option value="course15">Cosmetology(City Improvement Division)</option>
+                      </select><br>
+                <button type="submit">Submit</button>
+            </form>
+          </main>
+        </div>
+      </div>
+</div>
+
+</body>
+</html>
