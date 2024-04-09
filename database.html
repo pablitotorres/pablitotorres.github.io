@@ -19,46 +19,20 @@
     </div>
     <section class="main_content">
         <div class="info">
-            <h1 class="header">Beneficiaries</h1>
+            <h1 class="header">Beneficiary Database</h1>
             <input type="text" id="search-input" onkeyup="searchFunction()" placeholder="Search beneficiary...">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Address</th>
-                        <th>Profile</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>John Doe</td>
-                        <td>30</td>
-                        <td>Carmen, Cagayan de Oro City</td>
-                        <td>JohnDoe.pdf</td>
-                        <td>
-                            <button class="edit-button">Edit</button>
-                            <button class="delete-button">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jane Quezon</td>
-                        <td>25</td>
-                        <td>Kauswagan, Cagayan de Oro City</td>
-                        <td>JaneQuezon.pdf</td>
-                        
-                        <td>
-                            <button class="edit-button">Edit</button>
-                            <button class="delete-button">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- Add more beneficiaries here -->
-                </tbody>
-            </table>
+            <table id="profileTable">
+                <tr>
+                  <th>First Name</th>
+                  <th>Middle Name</th>
+                  <th>Last Name</th>
+                  <th>Address</th>
+                  <th>Sex</th>
+                  <th>Civil Status</th>
+                  <th>Employment Status</th>
+                  <th>Birthday</th>
+                  <th>Birthplace</th>
+                </tr>
         </div>
     </section>
 </div>
