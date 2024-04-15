@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond The Sea</title>
+    <link rel="stylesheet" href="userprofile.css" />
+  </head>
+  <body>
+    <header class="head-bar">
+      <nav class="navigation-bar">
+        <ul>
+          <li><a href="index2.html">Find your Cruise</a></li>
+          <li><a href="index2.html">Destinations</a></li>
+          <li><a href="index2.html">Cruise Lines</a></li>
+          <li><a href="index2.html">Ship</a></li>
+          <li><a href="index2.html">Ports</a></li>
+          <li><a href="index2.html">Cruise Guides</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="profile-bar">
+      <div class="title">
+        <h2><b>Beyond The Sea</b></h2>
+        <hr class="line1" />
+      </div>
+      <div class="dashboard">
+        <h2><b>Dashboard</b></h2>
+        <p>
+          Welcome aboard our Cruise Booking Dashboard, the centralized command
+          center for your maritime adventures. This user-friendly interface
+          offers a quick glance at upcoming trips, booking history, and
+          personalized preferences. Easily manage payments, update information,
+          and explore loyalty rewards. Our dashboard empowers you to modify
+          bookings, set communication preferences, and contribute to the
+          community through reviews. We're dedicated to ensuring your cruise
+          experience is seamless, enjoyable, and uniquely tailored to your
+          preferences. Bon voyage!
+        </p>
+        <hr class="line2" />
+        <div class="img1">
+          <?xml version="1.0" encoding="iso-8859-1"?>
+          <svg
+            height="200px"
+            width="200px"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+          >
+            <circle style="fill: #ffc61b" cx="256" cy="256" r="256" />
+            <path
+              style="fill: #eaa22f"
+              d="M273.494,511.393c117.42-7.927,213.123-95.017,234.175-208.348L356.509,151.885l-11.317,13.903
+  l-49.929-49.929L210.029,325.53l31.184,31.184l-70.546,51.852L273.494,511.393z"
+            />
+            <path
+              style="fill: #386895"
+              d="M216.528,170.667h78.945c8.847,0,15.338-8.314,13.193-16.896l-7.423-29.693
+  c-1.514-6.054-6.953-10.3-13.193-10.3h-64.098c-6.241,0-11.679,4.246-13.193,10.3l-7.423,29.693
+  C201.19,162.352,207.681,170.667,216.528,170.667z"
+            />
+            <path
+              style="fill: #273b7a"
+              d="M308.665,153.771l-7.423-29.693c-1.514-6.054-6.953-10.3-13.193-10.3h-33.197v56.889h40.62
+  C304.319,170.667,310.81,162.352,308.665,153.771z"
+            />
+            <polygon
+              style="fill: #38c6d9"
+              points="383.569,295.469 128.431,295.469 155.491,151.885 356.509,151.885 "
+            />
+            <polygon
+              style="fill: #02b2b2"
+              points="356.509,151.885 254.852,151.885 254.852,295.469 383.569,295.469 "
+            />
+            <polygon
+              style="fill: #273b7a"
+              points="256,237.899 113.778,286.661 170.667,408.566 256,408.566 341.333,408.566 398.222,286.661 
+  "
+            />
+            <polygon
+              style="fill: #386895"
+              points="256,237.899 256,408.566 170.667,408.566 113.778,286.661 "
+            />
+            <polygon
+              style="fill: #273b7a"
+              points="256,237.899 256,408.566 341.333,408.566 398.222,286.661 "
+            />
+            <g>
+              <path
+                style="fill: #386895"
+                d="M341.333,185.32H170.667c-2.381,0-4.31-1.929-4.31-4.31s1.929-4.31,4.31-4.31h170.667
+    c2.381,0,4.31,1.929,4.31,4.31S343.714,185.32,341.333,185.32z"
+              />
+              <path
+                style="fill: #386895"
+                d="M341.333,213.764H170.667c-2.381,0-4.31-1.929-4.31-4.31s1.929-4.31,4.31-4.31h170.667
+    c2.381,0,4.31,1.929,4.31,4.31S343.714,213.764,341.333,213.764z"
+              />
+            </g>
+            <g>
+              <path
+                style="fill: #273b7a"
+                d="M341.333,176.7h-86.481v8.62h86.481c2.381,0,4.31-1.929,4.31-4.31S343.714,176.7,341.333,176.7z"
+              />
+              <path
+                style="fill: #273b7a"
+                d="M341.333,205.145h-86.481v8.62h86.481c2.381,0,4.31-1.929,4.31-4.31
+    S343.714,205.145,341.333,205.145z"
+              />
+            </g>
+          </svg>
+        </div>
+      <div class="profile-info">
+        <h2>Profile</h2>
+        <label for="name">Name:</label>
+        <span id="name"></span>
+    
+        <label for="email">Email:</label>
+        <span id="email"></span>
+    
+        <label for="city">City:</label>
+        <span id="city"></span>
+    
+        <label for="contactInfo">Contact Information:</label>
+        <span id="contactInfo"></span>
+      </div>
+      <div class="update-form">
+        <h2>Update Profile</h2>
+        <form id="updateProfileForm" onsubmit="return updateProfile()">
+          <label for="city">City:</label>
+          <input type="text" id="updateCity" name="city" value="" required>
+      
+          <label for="phoneNum">Phone Number:</label>
+          <input type="tel" id="updatePhoneNum" name="phoneNum" value="" required>
+      
+          <button id="updateButton" onclick="updateProfile(event)">Update Profile</button>
+        </form>
+      </div>
+    </div>
+    <h3>ID User Verification</h3>
+    <form>
+      <h3>User Verification</h3>
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" placeholder="Enter your full name" required>
+      <label for="dob">Date of Birth:</label>
+      <input type="text" id="dob" placeholder="YYYY-MM-DD" required>
+      <label for="idType">ID Type:</label>
+      <select id="idType">
+          <option value="nationalID">National ID</option>
+          <option value="passport">Passport</option>
+          <option value="driverLicense">Driver's License</option>
+          <option value="other">Other</option>
+      </select>
+      <label for="idNumber">ID Number:</label>
+      <input type="text" id="idNumber" placeholder="Enter your ID number" required>
+      <input type="submit" value="Verify">
+  </form>
+    </form>
+</div>
+    <footer>
+      <hr />
+      <p>&copy; Beyond The Sea, All rights reserved.</p>
+    </footer>
+    <script>
+      async function updateProfileInfo() {
+        try {
+          const response = await fetch('/get-user');
+          const userData = await response.json();
+      
+          console.log('User data:', userData);
+      
+          // Check if the userData is in the expected format
+          if (!userData || !userData.firstname) {
+            console.error('Invalid user data format:', userData);
+            return;
+          }
+      
+          // Update profile information in the profile form
+          document.getElementById('name').innerText = `${userData.firstname} ${userData.lastname}`;
+          document.getElementById('email').innerText = `${userData.email}`;
+          document.getElementById('city').innerText = `${userData.city}`;
+          document.getElementById('contactInfo').innerText = `${userData.phoneNum}`;
+        } catch (error) {
+          console.error('Error fetching or updating user data:', error);
+        }
+      }
+    
+      // Call the updateProfileInfo function when the page loads
+      document.addEventListener('DOMContentLoaded', function () {
+        updateProfileInfo();
+      });
+      
+      // Function to update user profile
+      async function updateProfile(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+      
+        // Get the form element
+        const form = document.getElementById('updateProfileForm');
+      
+        // Check if the form is valid
+        if (!form.checkValidity()) {
+          // If the form is not valid, display an error message or handle it accordingly
+          alert('Please fill out all the required fields.');
+          return;
+        }
+      
+        try {
+          // Get updated city and phone number from the form
+          const updatedCity = document.getElementById('updateCity').value;
+          const updatedPhoneNum = document.getElementById('updatePhoneNum').value;
+      
+          console.log('Updating profile with:', { updatedCity, updatedPhoneNum });
+      
+          // Make a fetch request to update user profile
+          const response = await fetch('/update-profile', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              city: updatedCity,
+              phoneNum: updatedPhoneNum,
+            }),
+          });
+      
+          const result = await response.json();
+          console.log('Profile update result:', result);
+      
+          // After updating, refresh the user profile information
+          updateProfileInfo();
+      
+          // Reset the form to clear the filled values
+          form.reset();
+      
+          // Restore the update button text
+          document.getElementById('updateButton').innerText = 'Update Profile';
+      
+          // Show confirmation message to the user
+          if (result.success) {
+            alert('Profile updated successfully!');
+          } else {
+            alert('Error updating profile. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error updating user profile:', error);
+      
+          // Restore the update button text in case of an error
+          document.getElementById('updateButton').innerText = 'Update Profile';
+        }
+      }      
+    </script>
+  </body>
+</html>

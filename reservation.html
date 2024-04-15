@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <header class="head-bar">
+        <nav class="navigation-bar">
+          <ul>
+            <li><a href="index2.html">Find your Cruise</a></li>
+            <li><a href="index2.html">Destinations</a></li>
+            <li><a href="index2.html">Cruise Lines</a></li>
+            <li><a href="index2.html">Ship</a></li>
+            <li><a href="index2.html">Ports</a></li>
+            <li><a href="index2.html">Cruise Guides</a></li>
+          </ul>
+        </nav>
+      </header>
+
+    <div class="reservation-form">
+
+        <h3>Reservation Form:</h3>
+        <label for="destination">Destination:</label>
+        <div class="select1">
+          <select id="destination" name="destinations">
+            <option value="" disabled selected>Destinations</option>
+            <option value="Siargao Island">Siargao Island</option>
+            <option value="Camiguin">Camiguin</option>
+            <option value="Ozamis">Ozamis</option>
+            <option value="Boracay">Boracay</option>
+            <option value="Zamboanga">Zamboanga</option>
+          </select>
+          <div class="select1_arrow"></div>
+        </div>
+
+        <label for="sailingDate">Sailing Date:</label>
+        <div class="select2">
+          <select id="sailingDate" name="sailingDates">
+            <option value="" disabled selected>Sailing Dates</option>
+          </select>
+          <div class="select2_arrow"></div>
+        </div>
+
+        <script>
+          const destinationSelect = document.getElementById("destination");
+          const sailingDateSelect = document.getElementById("sailingDate");
+
+          destinationSelect.addEventListener("change", () => {
+            const selectedDestination = destinationSelect.value;
+            updateSailingDates(selectedDestination);
+          });
+
+          function updateSailingDates(destination) {
+            // Clear option if ma change ang destination
+            sailingDateSelect.innerHTML = '<option value="" disabled selected>Sailing Dates</option>';
+
+            // Date sa selected destination
+            if (destination === "Siargao Island") {
+              const siargaoSailingDates = ["01/05/2024", "02/03/2024", "03/09/2024", "04/13/2024", "05/24/2024"];
+              siargaoSailingDates.forEach(date => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                sailingDateSelect.appendChild(option);
+              });
+            } else if (destination === "Camiguin") {
+              const camiguinSailingDates = ["01/10/2024", "02/08/2024", "03/14/2024", "04/18/2024", "05/29/2024"];
+              camiguinSailingDates.forEach(date => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                sailingDateSelect.appendChild(option);
+              });
+            } else if (destination === "Ozamis") {
+              const ozamisSailingDates = ["01/15/2024", "02/13/2024", "03/19/2024", "04/23/2024", "05/34/2024"];
+              ozamisSailingDates.forEach(date => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                sailingDateSelect.appendChild(option);
+              });
+            } else if (destination === "Boracay") {
+              const boracaySailingDates = ["01/20/2024", "02/18/2024", "03/24/2024", "04/28/2024", "05/39/2024"];
+              boracaySailingDates.forEach(date => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                sailingDateSelect.appendChild(option);
+              });
+            } else if (destination === "Zamboanga") {
+              const zamboangaSailingDates = ["01/25/2024", "02/23/2024", "03/29/2024", "04/33/2024", "05/44/2024"];
+              zamboangaSailingDates.forEach(date => {
+                const option = document.createElement("option");
+                option.value = date;
+                option.textContent = date;
+                sailingDateSelect.appendChild(option);
+              });
+            }
+          }
+        </script>
+
+        <label for="cruise">Cruise:</label>
+        <div class="select3">
+            <select id="cruise" name="cruiseLines">
+                <option value="" disabled selected>All Cruise</option>
+                <option value="2GO">2GO</option>
+                <option value="United Philippines Lines Inc">United Philippines Lines Inc</option>
+                <option value="OSM Maritime Services Inc">OSM Maritime Services Inc</option>
+                <option value="SSM Maritime Services Inc">SSM Maritime Services Inc</option>
+                <option value="Singa Ship Management Phils Inc">Singa Ship Management Phils Inc</option>
+            </select>
+            <div class="select3_arrow"></div>
+        </div>
+
+        <label for="port">Port:</label>
+        <div class="select4">
+            <select id="port" name="port">
+                <option value="" disabled selected>Port</option>
+                <option value="Balingoan">Balingoan</option>
+                <option value="Cagayan de Oro">Cagayan de Oro</option>
+                <option value="Butuan">Butuan</option>
+                <option value="Dapitan">Dapitan</option>
+                <option value="Dipolog">Dipolog</option>
+            </select>
+            <div class="select4_arrow"></div>
+        </div>
+        
+        <button class="reservationButton" id="reserveNow">Reserve Now</button>
+
+        <button class="otherButton" id="otherBttn">Other Form</button>
+
+        <!-- Ticket display -->
+        <div id="ticket" class="hidden">
+            <h3>Ticket Details:</h3>
+            <p class="ticket-info" hidden id="ticketId">Ticket ID: <span id="ticketIdValue"></span></p>
+            <p class="ticket-info">Name: <span id="ticketName"></span></p>
+            <p class="ticket-info">Email: <span id="ticketEmail"></span></p>
+            <p class="ticket-info">Contact Information: <span id="ticketPhoneNum"></span></p>
+            <p class="ticket-info">Destination: <span id="ticketDestination"></span></p>
+            <p class="ticket-info">Sailing Date: <span id="ticketSailingDate"></span></p>
+            <p class="ticket-info">Cruise: <span id="ticketCruise"></span></p>
+            <p class="ticket-info">Port: <span id="ticketPort"></span></p>
+            <p class="ticket-info">Departure Schedule: <span id="ticketDepartureDate"></span></p>
+            <p class="ticket-info">Seat Number: <span id="ticketSeatNumber"></span></p>
+
+          <button class="printAndSaveButton" id="printAndSaveTicket">Print and Save</button>
+          <button class="deleteButton" id="deleteTicket">Delete Ticket</button>
+        </div>
+
+    <div class="other-form">
+
+      <h3>Other Form:</h3>
+      <label for="destination">Destination:</label>
+      <div class="select1">
+        <select id="destination" name="destinations">
+          <option value="" disabled selected>Destinations</option>
+          <option value="Siargao Island">Siargao Island</option>
+          <option value="Camiguin">Camiguin</option>
+          <option value="Ozamis">Ozamis</option>
+          <option value="Boracay">Boracay</option>
+          <option value="Zamboanga">Zamboanga</option>
+        </select>
+        <div class="select1_arrow"></div>
+      </div>
+      <label for="sailingDate">Sailing Date:</label>
+        <div class="select2">
+          <select id="sailingDate" name="sailingDates">
+            <option value="" disabled selected>Sailing Dates</option>
+          </select>
+          <div class="select2_arrow"></div>
+        </div>
+      <label for="cruise">Cruise:</label>
+        <div class="select3">
+            <select id="cruise" name="cruiseLines">
+                <option value="" disabled selected>All Cruise</option>
+                <option value="2GO">2GO</option>
+                <option value="United Philippines Lines Inc">United Philippines Lines Inc</option>
+                <option value="OSM Maritime Services Inc">OSM Maritime Services Inc</option>
+                <option value="SSM Maritime Services Inc">SSM Maritime Services Inc</option>
+                <option value="Singa Ship Management Phils Inc">Singa Ship Management Phils Inc</option>
+            </select>
+            <div class="select3_arrow"></div>
+        </div>
+
+        <label for="port">Port:</label>
+        <div class="select4">
+            <select id="port" name="port">
+                <option value="" disabled selected>Port</option>
+                <option value="Balingoan">Balingoan</option>
+                <option value="Cagayan de Oro">Cagayan de Oro</option>
+                <option value="Butuan">Butuan</option>
+                <option value="Dapitan">Dapitan</option>
+                <option value="Dipolog">Dipolog</option>
+            </select>
+            <div class="select4_arrow"></div>
+        </div>
+    </div>
+
+  </div>
+
+    <footer>
+        <hr />
+        <p>&copy; Beyond The Sea, All rights reserved.</p>
+    </footer>
+    <script>
+        async function reserveNow() {
+          try {
+            const destination = document.getElementById("destination").value;
+            const sailingDate = document.getElementById("sailingDate").value;
+            const cruise = document.getElementById("cruise").value;
+            const port = document.getElementById("port").value;
+
+            if (destination === "" || sailingDate === "" || cruise === "" || port === "") {
+              alert("Please select values for all options.");
+              return;
+            }
+
+            // Disable the button to prevent multiple submissions
+            document.getElementById("reserveNow").disabled = true;
+
+            const response = await fetch('/reserve-now', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ destination, sailingDate, cruise, port }),
+            });
+
+            const responseData = await response.json();
+
+            if (response.ok && responseData && responseData.ticketDetails) {
+              const ticketDetails = responseData.ticketDetails;
+              displayTicketDetails(ticketDetails);
+              alert('Reservation successful. Ticket details stored.');
+            } else if (responseData.error === 'User already has an active ticket') {
+              // Display a custom alert for users with active tickets
+              alert('You already have an active ticket. Please revoke it before making a new reservation.');
+              return;
+            } else {
+              console.error('Error during reservation:', responseData?.error || 'Unknown error');
+              alert('Error processing reservation. Please try again.');
+              return;
+            }
+          } catch (error) {
+            console.error('Error during reservation:', error);
+            alert(`Internal Server Error: ${error.message}`);
+          }
+        }   
+
+        document.getElementById("reserveNow").addEventListener("click", reserveNow);
+
+        function generateSeatNumber() {
+          // Generate a random seat number between 1 and 5000
+          return Math.floor(Math.random() * 3000) + 1;
+        }
+
+        function calculateDepartureDate(selectedSailingDate) {
+            // Parse the selected sailing date
+            const sailingDate = new Date(selectedSailingDate);
+          
+            // Calculate the departure date with a 3-day gap
+            const departureDate = new Date(sailingDate);
+            departureDate.setDate(sailingDate.getDate() + 3);
+          
+            // Format the departure date as MM/DD/YY
+            const formattedDepartureDate = `${departureDate.getMonth() + 1}/${departureDate.getDate()}/${departureDate.getFullYear()}`;
+          
+            return formattedDepartureDate;
+          }
+
+          function displayTicketDetails(ticketDetails) {
+          const ticketElement = document.getElementById("ticket");
+          const ticketIdElement = document.getElementById("ticketId");
+          const ticketName = document.getElementById("ticketName");
+          const ticketEmail = document.getElementById("ticketEmail");
+          const ticketPhoneNum = document.getElementById("ticketPhoneNum");
+          const ticketDestination = document.getElementById("ticketDestination");
+          const ticketSailingDate = document.getElementById("ticketSailingDate");
+          const ticketCruise = document.getElementById("ticketCruise");
+          const ticketPort = document.getElementById("ticketPort");
+          const ticketDepartureDate = document.getElementById("ticketDepartureDate");
+          const ticketSeatNumber = document.getElementById("ticketSeatNumber");
+
+          // Set the ticket ID dynamically
+          ticketIdElement.innerText = ticketDetails._id;
+
+          // Update user details
+          ticketName.innerText = `${ticketDetails.firstname} ${ticketDetails.lastname}`;
+          ticketEmail.innerText = ticketDetails.email;
+          ticketPhoneNum.innerText = ticketDetails.phoneNum;
+
+          // Update ticket details
+          ticketDestination.innerText = ticketDetails.destination;
+          ticketSailingDate.innerText = ticketDetails.sailingDate;
+          ticketCruise.innerText = ticketDetails.cruise;
+          ticketPort.innerText = ticketDetails.port;
+          ticketDepartureDate.innerText = ticketDetails.departureDate;
+          ticketSeatNumber.innerText = ticketDetails.seatNumber;
+
+          // Show the ticket element
+          ticketElement.classList.remove("hidden");
+      }
+
+        // Add this function to fetch and display ticket details on page load
+        async function displayTicketOnLoad() {
+          try {
+            // Fetch ticket details from the server
+            const response = await fetch('/get-ticket-details');
+            const ticketDetails = await response.json();
+
+            if (response.ok && ticketDetails) {
+              // Display ticket details on the page
+              displayTicketDetails(ticketDetails);
+            } else {
+              console.error('Error fetching ticket details:', ticketDetails?.error || 'Unknown error');
+              // Handle the error as needed
+            }
+          } catch (error) {
+            console.error('Error fetching ticket details:', error);
+            // Handle the error as needed
+          }
+        }
+
+        // Call the displayTicketOnLoad function when the page loads
+        window.addEventListener('load', displayTicketOnLoad);
+
+        // An event listener to the "Delete Ticket" button
+        document.getElementById("deleteTicket").addEventListener("click", async () => {
+          const ticketIdElement = document.getElementById("ticketId");
+          const ticketId = ticketIdElement.innerText;
+          const userEmail = document.getElementById("ticketEmail").innerText;
+
+          // Send a POST request to the server to delete the ticket
+          const response = await fetch('/delete-ticket', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ticketId }),
+          });
+
+          const responseData = await response.json();
+
+          if (response.ok) {
+            alert(responseData.message);
+            // Hide the ticket details after deletion
+            document.getElementById("ticket").classList.add("hidden");
+          } else {
+            console.error('Error deleting ticket:', responseData?.error || 'Unknown error');
+            alert('Error deleting ticket. Please try again.');
+          }
+        });
+
+    </script>    
+</body>
+</html>
