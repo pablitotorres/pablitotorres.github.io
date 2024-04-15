@@ -10,31 +10,31 @@ body {
 
 @keyframes backgroundAnimation {
   0% {
-    background-image: url("cruise-view.jpg");
+    background-image: url("pictures/cruise-view.jpg");
   }
   25% {
-    background-image: url("sunset.jpg");
+    background-image: url("pictures/sunset.jpg");
   }
   50% {
-    background-image: url("beach4.jpg");
+    background-image: url("pictures/beach4.jpg");
   }
   75% {
-    background-image: url("beach3.jpg");
+    background-image: url("pictures/beach3.jpg");
   }
   100% {
-    background-image: url("beach2.jpg");
+    background-image: url("pictures/beach2.jpg");
   }
   125% {
-    background-image: url("collosuem.jpg"); /* Reverse order back to the start */
+    background-image: url("pictures/collosuem.jpg"); /* Reverse order back to the start */
   }
   150% {
-    background-image: url("beach1.jpg");
+    background-image: url("pictures/beach1.jpg");
   }
   175% {
-    background-image: url("sunset.jpg");
+    background-image: url("pictures/sunset.jpg");
   }
   200% {
-    background-image: url("cruise-view.jpg");
+    background-image: url("pictures/cruise-view.jpg");
   }
 }
 
