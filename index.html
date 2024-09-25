@@ -9,17 +9,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
-    <h1>QR Code Scanner & Generator with Logo</h1>
+    <div class="container">
+        <header>
+            <h1>QR Code Scanner & Generator</h1>
+        </header>
 
-    <!-- Section for QR Code Scanning -->
-    <div id="qr-reader" style="width: 300px;"></div>
-    
-    <!-- Section for QR Code Generation -->
-    <div id="qr-code-generator">
-        <h2>Generate QR Code</h2>
-        <input type="text" id="url-input" placeholder="Enter URL" />
-        <button onclick="generateQRCode()">Generate QR Code</button>
-        <div id="qr-code"></div>
+        <!-- Step 1: Select QR Code Type -->
+        <section class="qr-type">
+            <h2>1. Select a type of QR code</h2>
+            <div class="qr-type-options">
+                <button onclick="selectType('Website')">Website</button>
+                <button onclick="selectType('PDF')">PDF</button>
+                <button onclick="selectType('Links')">Links</button>
+                <button onclick="selectType('vCard')">vCard</button>
+                <button onclick="selectType('Business')">Business</button>
+                <button onclick="selectType('Images')">Images</button>
+                <button onclick="selectType('Video')">Video</button>
+                <button onclick="selectType('Apps')">Apps</button>
+                <button onclick="selectType('Coupon')">Coupon</button>
+                <button onclick="selectType('MP3')">MP3</button>
+                <button onclick="selectType('Menu')">Menu</button>
+                <button onclick="selectType('WiFi')">WiFi</button>
+            </div>
+        </section>
+
+        <!-- Step 2: Enter QR Code Content -->
+        <section class="qr-content" id="qr-content-section" style="display:none;">
+            <h2>2. Enter content for QR code</h2>
+            <input type="text" id="url-input" placeholder="Enter URL or content" />
+            <button onclick="generateQRCode()">Generate QR Code</button>
+            <div id="qr-code"></div>
+        </section>
+
+        <!-- QR Code Scanner -->
+        <section class="qr-scanner">
+            <h2>Scan a QR Code</h2>
+            <div id="qr-reader" style="width: 300px;"></div>
+        </section>
     </div>
 
     <script>
@@ -48,11 +74,17 @@
             console.error(`Error: ${err}`);
         });
 
-        // Function to generate a QR code based on user input and overlay a logo
+        // Handle QR Code type selection
+        function selectType(type) {
+            document.getElementById('qr-content-section').style.display = 'block';
+            document.getElementById('url-input').placeholder = `Enter ${type} content`;
+        }
+
+        // Function to generate a QR code based on user input
         function generateQRCode() {
-            const url = document.getElementById("url-input").value;
-            if (!url) {
-                alert("Please enter a URL");
+            const content = document.getElementById("url-input").value;
+            if (!content) {
+                alert("Please enter the content");
                 return;
             }
 
@@ -60,42 +92,12 @@
             const qrCodeElement = document.getElementById("qr-code");
             qrCodeElement.innerHTML = "";
 
-            // Create a canvas element to draw the QR code and logo
+            // Generate QR Code
             const qrCode = new QRCode(qrCodeElement, {
-                text: url,
+                text: content,
                 width: 200,
                 height: 200
             });
-
-            // After the QR code is generated, overlay the logo
-            setTimeout(() => {
-                const qrImage = qrCodeElement.querySelector("img");
-                const canvas = document.createElement("canvas");
-                const context = canvas.getContext("2d");
-                const logo = new Image();
-                
-                canvas.width = qrImage.width;
-                canvas.height = qrImage.height;
-
-                // Draw the QR code on the canvas
-                context.drawImage(qrImage, 0, 0);
-
-                // Set the logo source (You can change this URL to your logo's URL)
-                logo.src = '/logo.png';  // Replace with your actual logo URL in the public folder
-
-                // Draw the logo once it loads
-                logo.onload = () => {
-                    const logoSize = 50; // Adjust logo size
-                    const logoPositionX = (canvas.width - logoSize) / 2;
-                    const logoPositionY = (canvas.height - logoSize) / 2;
-                    
-                    context.drawImage(logo, logoPositionX, logoPositionY, logoSize, logoSize);
-
-                    // Replace the QR code image with the new canvas image
-                    qrCodeElement.innerHTML = ""; // Clear previous QR code
-                    qrCodeElement.appendChild(canvas); // Append canvas with QR and logo
-                };
-            }, 100);  // Delay to ensure QR code is fully generated
         }
     </script>
 </body>
